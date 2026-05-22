@@ -14,9 +14,18 @@
 - GitHub MCP — 安装：GitHub API 操作（已配置 Token）
 - `GUIDE-20260522-001` — 新增：CodeGraph 使用指南
 - `GUIDE-20260522-002` — 新增：Chrome DevTools 使用指南
-- `GUIDE-20260522-003` — 新增：缺失技能补充指南（9 个替代方案）
-- `youtube-transcript` skill — 自定义 skill：YouTube 字幕获取（`.opencode/skills/`）
-- `translate-helper` skill — 自定义 skill：中英翻译助手（`.opencode/skills/`）
+- `GUIDE-20260522-003` — 新增：缺失技能补充指南（全部 13 个替代 skill 已安装）
+- `build-error-resolver` — 自定义 skill：构建错误排查（`.opencode/skills/`）
+- `e2e-runner` — 自定义 skill：端到端测试（`.opencode/skills/`）
+- `refactor-cleaner` — 自定义 skill：死代码清理（`.opencode/skills/`）
+- `image-generator` — 自定义 skill：AI 图像生成（`.opencode/skills/`）
+- `diagram-maker` — 自定义 skill：图表绘制（`.opencode/skills/`）
+- `url-to-markdown` — 自定义 skill：网页转Markdown（`.opencode/skills/`）
+- `comic-creator` — 自定义 skill：漫画创作（`.opencode/skills/`）
+- `slide-deck` — 自定义 skill：幻灯片制作（`.opencode/skills/`）
+- `wechat-summary` — 自定义 skill：微信文章总结（`.opencode/skills/`）
+- `image-cards` — 自定义 skill：社交卡片图（`.opencode/skills/`）
+- `cover-image` — 自定义 skill：封面图生成（`.opencode/skills/`）
 - `ARTICLE-20260522-001` — 新增：CodeGraph 预索引代码知识图谱
 - `ARTICLE-20260522-002` — 新增：Chrome DevTools for Coding Agents
 - `TAXONOMY.md` — 新增：标签分类体系

@@ -22,15 +22,20 @@ difficulty: beginner
 
 | 类别 | 缺失技能 | 替代方案 | 类型 |
 |:----:|:---------|:---------|:----:|
-| 开发工作流 | build-error-resolver | `/diagnose` + 已有工具 | ✅ 已有 |
-| 开发工作流 | e2e-runner | Playwright MCP + `/qa` | ✅ 已有 |
-| 开发工作流 | refactor-cleaner | `/improve-codebase-architecture` | ✅ 已有 |
-| 创意媒体 | baoyu-image-gen | MiniMax M2.7 模型已配置 | ✅ 可手动使用 |
+| 开发工作流 | build-error-resolver | **自定义 skill 已安装** | 🆕 已装 |
+| 开发工作流 | e2e-runner | **自定义 skill 已安装** | 🆕 已装 |
+| 开发工作流 | refactor-cleaner | **自定义 skill 已安装** | 🆕 已装 |
+| 创意媒体 | baoyu-image-gen | **自定义 skill 已安装** | 🆕 已装 |
 | 创意媒体 | baoyu-youtube-transcript | **自定义 skill 已安装** | 🆕 已装 |
-| 创意媒体 | baoyu-diagram | ECC `motion-ui` + AI 生成代码 | ⚠️ 需手动 |
+| 创意媒体 | baoyu-comic | **自定义 skill 已安装** | 🆕 已装 |
+| 创意媒体 | baoyu-infographic → diagram-maker | **自定义 skill 已安装** | 🆕 已装 |
+| 创意媒体 | baoyu-image-cards | **自定义 skill 已安装** | 🆕 已装 |
+| 创意媒体 | baoyu-cover-image | **自定义 skill 已安装** | 🆕 已装 |
 | 文档转换 | baoyu-translate | **自定义 skill 已安装** | 🆕 已装 |
-| 文档转换 | baoyu-url-to-markdown | tavily-extract 工具 | ✅ 已有 |
-| 创意媒体 | baoyu-comic / baoyu-infographic | MiniMax + 手动排版 | ⚠️ 需手动 |
+| 文档转换 | baoyu-url-to-markdown | **自定义 skill 已安装** | 🆕 已装 |
+| 文档转换 | baoyu-slide-deck | **自定义 skill 已安装** | 🆕 已装 |
+| 其他 | baoyu-wechat-summary | **自定义 skill 已安装** | 🆕 已装 |
+| 其他 | baoyu-article-illustrator → image-generator | **自定义 skill 已安装** | 🆕 已装 |
 
 ---
 
