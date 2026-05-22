@@ -621,7 +621,7 @@ AI 响应:
 
 | 配置项 | 文件路径 | 内容 |
 |--------|---------|------|
-| 全局 MCP + 插件 | `~/.config/opencode/opencode.jsonc` | MCP: tavily-search / 插件: visual-cache, skill-creator |
+| 全局 MCP + 插件 | `~/.config/opencode/opencode.jsonc` | MCP: tavily-search, playwright, github / 插件: visual-cache, skill-creator |
 | Provider | `~/.config/opencode/opencode.json` | MiniMax 模型配置 |
 | 项目插件 | `~/.opencode/opencode.json` | opencode-visual-cache@latest |
 
@@ -686,7 +686,7 @@ AI 响应:
 
 ## 已安装 MCP 服务器
 
-### tavily-search
+### tavily-search — 互联网搜索
 
 | 属性 | 内容 |
 |------|------|
@@ -699,20 +699,145 @@ AI 响应:
 
 | 工具 | 参数 | 说明 |
 |------|------|------|
-| `tavily-search_tavily_search` | query, max_results, search_depth, time_range, include_domains | 互联网搜索，返回带摘要的结果 |
+| `tavily-search_tavily_search` | query, max_results, search_depth | 互联网搜索，返回带摘要的结果 |
 | `tavily-search_tavily_extract` | urls, extract_depth, format | 提取指定 URL 的内容 |
 | `tavily-search_tavily_crawl` | url, max_depth, max_pages | 深度爬取网站 |
 | `tavily-search_tavily_research` | query | 深度研究（生成结构化报告） |
 
-**使用方式**：不需要手动调用。当 AI 需要搜索互联网时自动使用。
+**使用方式**：不需要手动调用，AI 需要查资料时自动使用。
 
-**触发示例**：
+**高效使用技巧**：
+- 需要最新信息时，直接说"帮我查一下最新的 X"
+- 需要阅读某个网页时，说"帮我抓一下这个链接"
+- 需要深度研究报告时，说"帮我深度研究一下 X 主题"
+
+---
+
+### playwright — 浏览器自动化
+
+| 属性 | 内容 |
+|------|------|
+| **类型** | local（本地 MCP） |
+| **命令** | `npx -y @playwright/mcp` |
+| **状态** | 已启用 |
+| **依赖** | Chromium 浏览器已安装（`playwright install chromium`） |
+| **作用** | AI 可以控制真实浏览器：导航页面、点击元素、填表单、截图、验证页面状态 |
+
+**提供的核心能力**：
+
+| 操作 | 说明 |
+|------|------|
+| 页面导航 | 打开任意 URL，等待页面加载 |
+| 点击元素 | 点击按钮、链接、菜单项 |
+| 表单填写 | 输入文本、选择下拉框、勾选复选框 |
+| 页面截图 | 截取全页或特定区域，添加标注 |
+| 状态验证 | 检查元素可见性、文本内容、属性值 |
+| 对话框处理 | 自动确认/取消 alert/confirm/prompt |
+| 文件上传 | 上传文件到表单 |
+| 响应式测试 | 设置不同视口大小测试自适应布局 |
+| Diff 对比 | 操作前后截图对比，发现视觉变化 |
+
+**使用方式**：不需要手动调用，AI 需要测试浏览器时自动调用。
+
+**高效使用技巧**：
+
 ```text
-用户: "帮我查一下最新的 React 19 有什么新特性"
-→ AI 自动调用 tavily-search_tavily_search("React 19 new features")
+✅ 正确用法:
+  "打开 https://example.com 帮我看看这个页面"
+  "在这个搜索框输入 'hello' 然后点搜索按钮"
+  "截图给我看看现在的页面状态"
+  "帮我测试这个表单提交功能"
+  "分别用手机和桌面分辨率打开这个页面"
+  "点这个按钮前后各截一张图，对比有什么变化"
 
-用户: "这篇论文的摘要是什么？帮我抓一下这个链接"
-→ AI 自动调用 tavily-search_tavily_extract("https://...")
+❌ 错误用法:
+  "用 playwright 打开百度"                    ← 不需要提具体工具名
+  "写一段 playwright 代码"                     ← 这不是 MCP 的目的
+  "帮我装个 playwright 环境"                    ← 已经装好了
+```
+
+**对比 GStack 内置 `/browse`**：
+
+| 维度 | GStack `/browse` | Playwright MCP |
+|------|-----------------|----------------|
+| 速度 | ~100ms/命令 | 稍慢（启动浏览器有开销）|
+| 能力 | 导航/截图/点击 | 导航/截图/点击/填表/上传/对话框/响应式 |
+| 适用场景 | 快速验证 | 复杂交互测试 |
+
+> 日常快速查看用 GStack `/browse`，复杂交互测试用 Playwright MCP。
+
+---
+
+### github — GitHub API 操作
+
+| 属性 | 内容 |
+|------|------|
+| **类型** | local（本地 MCP） |
+| **命令** | `npx -y @modelcontextprotocol/server-github` |
+| **状态** | 已启用 |
+| **认证** | GitHub Personal Access Token |
+| **作用** | AI 可以直接操作 GitHub：管理 Issue、PR、Code Review、搜索代码 |
+
+**提供的核心能力**：
+
+| 操作 | 说明 |
+|------|------|
+| Issue 管理 | 创建/查看/更新/关闭 Issue |
+| PR 管理 | 创建/查看/合并 Pull Request |
+| 代码审查 | 查看 PR diff、提交审查意见 |
+| 代码搜索 | 搜索仓库中的代码 |
+| 文件操作 | 读取/创建/更新仓库文件 |
+| 仓库信息 | 查看仓库详情、分支、标签 |
+
+**使用方式**：不需要手动调用，AI 需要操作 GitHub 时自动使用。
+
+**高效使用技巧**：
+
+```text
+✅ 正确用法:
+  "帮我给这个仓库创建一个 Issue"                ← 自动调用 GitHub MCP
+  "看看这个 PR 的改动内容"                      ← 自动读取 PR diff
+  "帮我把这个文件改成 ..."                       ← 直接操作文件
+  "在这个仓库里搜索所有 API 相关代码"            ← 代码搜索
+  "帮我 review 这个 PR"                         ← 自动分析 + 提交意见
+
+❌ 错误用法:
+  "用 GitHub MCP 帮我做 X"                     ← 不需要提具体工具名
+  "我的 Token 是 ..."                           ← 已经配置好了
+```
+
+**安全提醒**：
+- Token 存储在 `~/.config/opencode/opencode.jsonc` 中
+- 该文件不在项目 Git 仓库中，不会被意外提交
+- 如果 Token 泄露，可以在 GitHub Settings → Developer settings → Personal access tokens 撤销
+
+---
+
+## 当前 MCP 配置（共 3 个）
+
+```jsonc
+// ~/.config/opencode/opencode.jsonc
+{
+  "mcp": {
+    "tavily-search": {          // 互联网搜索
+      "type": "remote",
+      "url": "https://tavily.ivanli.cc/mcp",
+      "headers": { "Authorization": "Bearer <token>" },
+      "enabled": true
+    },
+    "playwright": {             // 浏览器自动化
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp"],
+      "enabled": true
+    },
+    "github": {                 // GitHub API 操作
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "enabled": true,
+      "env": { "GITHUB_TOKEN": "<your-token>" }
+    }
+  }
+}
 ```
 
 ---
@@ -780,12 +905,10 @@ MCP（Model Context Protocol）服务器让 AI 能连接外部工具和数据源
 }
 ```
 
-### 常用 MCP 推荐
+### 其他推荐 MCP（尚未安装）
 
 | MCP 服务器 | 作用 | 类型 | 推荐理由 |
 |-----------|------|------|---------|
-| **Playwright MCP** | 浏览器自动化（比内置 browse 更强大） | local | `npx -y @playwright/mcp` |
-| **GitHub MCP** | 管理 Issue、PR、Code Review | remote | 直接操作 GitHub API |
 | **Filesystem MCP** | 安全文件系统访问 | local | 限制 AI 只能访问指定目录 |
 | **Sequential Thinking MCP** | 增强 AI 推理能力 | local | 复杂问题分步推理 |
 | **PostgreSQL MCP** | 数据库查询 | local | 直接查询数据库 |
