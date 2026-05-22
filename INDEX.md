@@ -1,7 +1,7 @@
 # INDEX — 主索引
 
 > 最后更新: 2026-05-22
-> 总文档数: 5
+> 总文档数: 7
 
 ---
 
@@ -32,6 +32,7 @@ _(暂无)_
 |----|------|------|------|
 | 001 | [CodeGraph(预索引代码知识图谱使用指南)](compiled/GUIDE-20260522-001-CodeGraph(预索引代码知识图谱使用指南).md) | `tool` `ai-ml` `productivity` `opencode` | 2026-05-22 |
 | 002 | [ChromeDevTools(Chrome调试工具使用指南)](compiled/GUIDE-20260522-002-ChromeDevTools(Chrome调试工具使用指南).md) | `tool` `frontend` `testing` `debugging` `opencode` | 2026-05-22 |
+| 003 | [SupplementarySkills(缺失技能补充指南)](compiled/GUIDE-20260522-003-SupplementarySkills(缺失技能补充指南).md) | `reference` `guide` `tool` `productivity` `opencode` | 2026-05-22 |
 
 ### PROJECT — 项目文档
 

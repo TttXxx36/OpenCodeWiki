@@ -14,6 +14,9 @@
 - GitHub MCP — 安装：GitHub API 操作（已配置 Token）
 - `GUIDE-20260522-001` — 新增：CodeGraph 使用指南
 - `GUIDE-20260522-002` — 新增：Chrome DevTools 使用指南
+- `GUIDE-20260522-003` — 新增：缺失技能补充指南（9 个替代方案）
+- `youtube-transcript` skill — 自定义 skill：YouTube 字幕获取（`.opencode/skills/`）
+- `translate-helper` skill — 自定义 skill：中英翻译助手（`.opencode/skills/`）
 - `ARTICLE-20260522-001` — 新增：CodeGraph 预索引代码知识图谱
 - `ARTICLE-20260522-002` — 新增：Chrome DevTools for Coding Agents
 - `TAXONOMY.md` — 新增：标签分类体系
