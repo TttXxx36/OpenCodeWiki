@@ -1,7 +1,7 @@
 # INDEX — 主索引
 
 > 最后更新: 2026-05-22
-> 总文档数: 1
+> 总文档数: 2
 
 ---
 
@@ -12,6 +12,7 @@
 | ID | 文档 | Tags | 日期 |
 |----|------|------|------|
 | 001 | [All Installed Skills(全部已安装技能知识库)](compiled/SKILLS-20260522-001-AllInstalledSkills(全部已安装技能知识库).md) | `reference` `general` `opencode` `claude-code` | 2026-05-22 |
+| 002 | [Skills and MCP Complete Guide(Skills与MCP完整使用指南)](compiled/SKILLS-20260522-002-SkillsAndMCPGuide(Skills与MCP完整使用指南).md) | `reference` `guide` `opencode` `claude-code` `tool` | 2026-05-22 |
 
 ### ARTICLE — 外部文章
 
@@ -35,16 +36,18 @@ _(暂无)_
 
 | 主题 | 文档 |
 |------|------|
-| `general` | SKILLS-20260522-001 |
-| `reference` | SKILLS-20260522-001 |
-| `opencode` | SKILLS-20260522-001 |
-| `claude-code` | SKILLS-20260522-001 |
+| `general` | SKILLS-20260522-001, SKILLS-20260522-002 |
+| `reference` | SKILLS-20260522-001, SKILLS-20260522-002 |
+| `opencode` | SKILLS-20260522-001, SKILLS-20260522-002 |
+| `claude-code` | SKILLS-20260522-001, SKILLS-20260522-002 |
+| `guide` | SKILLS-20260522-002 |
+| `tool` | SKILLS-20260522-002 |
 
 ## 按状态
 
 | 状态 | 文档 |
 |------|------|
-| `published` | SKILLS-20260522-001 |
+| `published` | SKILLS-20260522-001, SKILLS-20260522-002 |
 
 ---
 
