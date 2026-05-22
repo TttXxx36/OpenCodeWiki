@@ -11,6 +11,8 @@
 |--------|------|---------|
 | SKILLS-20260522-001 | 概述了所有 | gstack / MattPocock / Superpowers / ECC / Karpathy / UnderstandAnything / AcademicResearch / AnthropicOfficial |
 | SKILLS-20260522-001 | 配套标签体系 | TAXONOMY.md |
+| GUIDE-20260522-001 | 安装指导 | CodeGraph 安装 |
+| GUIDE-20260522-002 | 安装指导 | Chrome DevTools MCP 安装 |
 | TAXONOMY.md | 定义了标签 | 所有文档 |
 | INDEX.md | 索引了所有 | 所有文档 |
 
