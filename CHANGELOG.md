@@ -26,6 +26,7 @@
 - `wechat-summary` — 自定义 skill：微信文章总结（`.opencode/skills/`）
 - `image-cards` — 自定义 skill：社交卡片图（`.opencode/skills/`）
 - `cover-image` — 自定义 skill：封面图生成（`.opencode/skills/`）
+- **Hindsight MCP** — 安装：AI 记忆系统（端口 8891，MiniMax 驱动）
 - `ARTICLE-20260522-001` — 新增：CodeGraph 预索引代码知识图谱
 - `ARTICLE-20260522-002` — 新增：Chrome DevTools for Coding Agents
 - `TAXONOMY.md` — 新增：标签分类体系
